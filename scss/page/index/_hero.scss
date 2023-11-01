@@ -1,0 +1,130 @@
+.hero {
+   position: relative;
+   @include adaptiveValue("padding-top", 70, 50);
+
+   // .hero__container
+   &__container {
+   }
+   // .hero__sup-title
+   &__sup-title {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 20, 16);
+      line-height: 150%;
+      letter-spacing: 0.56em;
+      color: $text-color;
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+   // .hero__title
+   &__title {
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: rem(-10);
+         left: 0;
+         display: block;
+         @include adaptiveValue("width", 92, 54);
+         @include adaptiveValue("height", 11, 7);
+         background-color: $mainColor;
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(50);
+      }
+   }
+   // .hero__bottom
+   &__bottom {
+   }
+   // .hero__decor
+   &__decor {
+   }
+}
+//===============================================================================================================
+.bottom-hero {
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   // .bottom-hero__picture
+   &__picture {
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .bottom-hero__button
+   &__button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         transform: translate(-50%, 60%);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         transform: translate(-50%, 70%);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         transform: translate(-50%, 85%);
+      }
+   }
+}
+//===============================================================================================================
+.decor-hero {
+   // .decor-hero__top
+   &__top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, 0%);
+
+      display: none;
+
+      @include adaptiveValue("width", 208, 150, 0, 1230, 767.98);
+      @include adaptiveValue("height", 208, 150, 0, 1230, 767.98);
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      filter: blur(100px);
+      z-index: -1;
+      //===============================================================================================================
+      @media screen and (min-width: $mobile) {
+         display: block;
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $pc) {
+         animation: light 10s linear infinite;
+      }
+   }
+   // .decor-hero__bottom
+   &__bottom {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 47px);
+
+      display: none;
+      @media (min-width: $mobileSmall) {
+         display: block;
+      }
+
+      @include adaptiveValue("width", 380, 150, 0, 1230, 767.98);
+      @include adaptiveValue("height", 354, 150, 0, 1230, 767.98);
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      filter: blur(100px);
+      z-index: -1;
+      //===============================================================================================================
+      @media screen and (min-width: $pc) {
+         animation: light-hero 10s linear infinite;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         filter: blur(70px);
+      }
+   }
+}

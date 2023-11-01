@@ -1,0 +1,80 @@
+.banner {
+   position: relative;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   @include adaptiveValue("height", 390, 240);
+   @include adaptiveValue("padding-top", 150, 25);
+   @include adaptiveValue("padding-bottom", 50, 25);
+
+   &__top-list,
+   &__bottom-list {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+
+      padding: rem(15) 0;
+      border-top: rem(4) solid #6c6c2f;
+      border-bottom: rem(4) solid #6c6c2f;
+      box-shadow: rem(1) rem(10) rem(15) 0 rgb(0 0 0 / 10%);
+      background-color: #171717;
+
+      overflow: hidden;
+   }
+   // .banner__top-list
+   &__top-list {
+      transform: rotate(7deg);
+      z-index: 2;
+   }
+   // .banner__bottom-list
+   &__bottom-list {
+      transform: rotate(-7deg);
+      opacity: 0.6;
+      z-index: 1;
+   }
+   // .banner__item
+   &__item {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+
+      width: 100vw;
+      @include adaptiveValue("padding-top", 24, 0, 0, 1230, 369.98);
+      @include adaptiveValue("padding-bottom", 24, 0, 0, 1230, 369.98);
+      @include adaptiveValue("gap", 40, 16);
+
+      &._top-item {
+         animation: line-text 25s linear infinite reverse;
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            animation: line-text 15s linear infinite reverse;
+         }
+      }
+      &._bottom-item {
+         animation: line-text 25s linear infinite;
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            animation: line-text 15s linear infinite;
+         }
+      }
+   }
+   // .banner__text
+   &__text {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 40, 24);
+      line-height: math.div(40, 60);
+      width: 100vw;
+   }
+   // .banner__point
+   &__point {
+      display: block;
+      border-radius: 50%;
+      @include adaptiveValue("min-width", 14, 12);
+      @include adaptiveValue("height", 14, 12);
+      background: $link-color;
+   }
+}

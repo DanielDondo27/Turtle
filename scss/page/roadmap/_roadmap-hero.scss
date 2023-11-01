@@ -1,0 +1,147 @@
+.roadmap-hero {
+   @include adaptiveValue("padding-top", 70, 35);
+   @include adaptiveValue("padding-bottom", 80, 70);
+   // .roadmap-hero__container
+   &__container {
+      position: relative;
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+      }
+   }
+   // .roadmap-hero__inner
+   &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(175);
+
+      @include adaptiveValue("padding-top", 114, 0, 0, 1230, 479.98);
+      @include adaptiveValue("padding-bottom", 114, 0, 0, 1230, 479.98);
+      z-index: 1;
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         flex-direction: column-reverse;
+         @include adaptiveValue("gap", 100, 50);
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 100, 50);
+         }
+      }
+   }
+   // .roadmap-hero__button
+   &__button {
+      position: relative;
+   }
+   // .roadmap-hero__title
+   &__title {
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: rem(-8);
+         left: 0;
+         display: block;
+         @include adaptiveValue("width", 92, 54);
+         @include adaptiveValue("height", 11, 7);
+         background-color: $mainColor;
+      }
+   }
+   // .roadmap-hero__picture
+   &__picture {
+      @media screen and (min-width: $mobileSmall) {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         @include adaptiveValue("width", 1220, 340);
+         @include adaptiveValue("height", 734, 187);
+         z-index: -1;
+      }
+      //===============================================================================================================
+      img {
+         max-width: 100%;
+         height: auto;
+         //===============================================================================================================
+         @media screen and (min-width: $mobileSmall) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+   // .roadmap-hero__decor
+   &__decor {
+   }
+}
+//===============================================================================================================
+.decor-hero {
+   // .decor-hero__top
+   &__top {
+   }
+   // .decor-hero__bottom
+   &__bottom {
+      filter: blur(200px);
+      &.-t {
+         @media screen and (min-width: $pc) {
+            animation: light-t 10s linear infinite;
+         }
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         filter: blur(120px);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         filter: blur(80px);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         display: block;
+         border-radius: 50%;
+         filter: blur(50px);
+      }
+   }
+
+   &__left,
+   &__right {
+      position: absolute;
+      bottom: 0;
+      @include adaptiveValue("width", 221, 95);
+      @include adaptiveValue("height", 221, 95);
+      z-index: -2;
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         @include adaptiveValue("bottom", 0, -80);
+      }
+   }
+
+   // .decor-hero__left
+   &__left {
+      left: 0;
+      transform: translate(-50%, 0%);
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         transform: translate(0%, 0%);
+      }
+   }
+   // .decor-hero__right
+   &__right {
+      right: 0;
+      transform: translate(50%, 0%);
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         transform: translate(0%, 0%);
+      }
+   }
+}
+//===============================================================================================================

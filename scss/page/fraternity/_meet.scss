@@ -1,0 +1,180 @@
+.meet {
+   padding-bottom: rem(164);
+   // .meet__container
+   &__container {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         align-items: center;
+      }
+   }
+   &__title,
+   &__subtitle {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 110, 50);
+      line-height: 120%;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         letter-spacing: 0em;
+      }
+   }
+   // .meet__title
+   &__title {
+      position: relative;
+
+      padding-top: rem(90);
+      @include adaptiveValue("padding-top", 90, 60);
+      text-align: left;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 87, 194, 0, 1230, 479.98);
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            @include adaptiveValue("margin-bottom", 36, 20);
+         }
+         //===============================================================================================================
+      }
+      &::after {
+         position: absolute;
+         content: "";
+         display: block;
+         @include adaptiveValue("width", 92, 54);
+         @include adaptiveValue("height", 11, 7);
+         background-color: $mainColor;
+      }
+   }
+   // .meet__subtitle
+   &__subtitle {
+      text-align: right;
+      background: linear-gradient(180deg, #fff496 17.34%, #eab359 91.62%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         transform: translate(0%, 0%);
+      }
+   }
+   // .meet__button
+   &__button {
+      position: relative;
+      margin-left: auto;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 24);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         position: absolute;
+         bottom: rem(50);
+         @include adaptiveValue("right", 20, 10);
+         transform: translate(0%, 0%);
+      }
+   }
+   // .meet__picture
+   &__picture {
+      position: relative;
+      @include adaptiveValue("width", 590, 312);
+      @include adaptiveValue("height", 698, 370);
+      pointer-events: none;
+      z-index: -1;
+      //===============================================================================================================
+      @media screen and (min-width: $mobileSmall) {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $mobileSmall) and (max-width: $mobile) {
+         opacity: 0.6;
+      }
+      //===============================================================================================================
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 50%;
+         transform: translate(calc(-50% + rem(85)), calc(-50% + rem(100)));
+
+         display: block;
+         @include adaptiveValue("width", 93, 49);
+         @include adaptiveValue("height", 93, 49);
+
+         background-color: #ffffff;
+         filter: blur(50px);
+         z-index: 1;
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            transform: translate(calc(-50% + rem(50)), calc(50% + rem(20)));
+            filter: blur(30px);
+         }
+      }
+      //===============================================================================================================
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .meet__decor
+   &__decor {
+   }
+   // .meet__elements
+   &__elements {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 0%);
+
+      @include adaptiveValue("width", 443, 190, 0, 1230, 479.98);
+      @include adaptiveValue("height", 443, 190, 0, 1230, 479.98);
+      pointer-events: none;
+      z-index: -1;
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         transform: translate(3%, 50%);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         @include adaptiveValue("bottom", 0, -80);
+      }
+      //===============================================================================================================
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+}
+
+.decor-meet {
+   // .decor-meet__top
+   &__top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, 0%);
+
+      display: none;
+
+      @include adaptiveValue("width", 208, 150, 0, 1230, 767.98);
+      @include adaptiveValue("height", 208, 150, 0, 1230, 767.98);
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      filter: blur(100px);
+      z-index: -1;
+      //===============================================================================================================
+      @media (min-width: $mobile) {
+         display: block;
+      }
+   }
+   // .decor-meet__bottom
+   &__bottom {
+   }
+}

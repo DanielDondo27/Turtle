@@ -1,0 +1,148 @@
+.description {
+   position: relative;
+   @include adaptiveValue("padding-top", 150, 25);
+   @include adaptiveValue("padding-bottom", 150, 25);
+
+   // .description__container
+   &__container {
+      position: relative;
+   }
+   // .description__line
+   &__line {
+      display: block;
+      @include adaptiveValue("width", 92, 54);
+      @include adaptiveValue("height", 11, 7);
+      background: $mainColor;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 50, 20);
+      }
+   }
+   // .description__introduction
+   &__introduction {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(10);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 24, 15);
+      }
+   }
+   // .description__suptitle
+   &__suptitle {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 24, 20);
+      line-height: math.div(24, 36);
+      text-transform: uppercase;
+      color: $text-color;
+   }
+   // .description__title
+   &__title {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 40, 32);
+      line-height: 120%;
+      text-transform: uppercase;
+      letter-spacing: -0.06em;
+      color: $link-color;
+   }
+   // .description__text
+   &__text {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 30, 10);
+      p {
+         font-weight: 400;
+         @include adaptiveValue("font-size", 32, 20);
+         line-height: math.div(32, 28);
+         max-width: rem(1010);
+      }
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 232, 100);
+      }
+   }
+   // .description__decor
+   &__decor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   &__element {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(0%, -10%);
+
+      @include adaptiveValue("width", 353, 150);
+      @include adaptiveValue("height", 527, 250);
+
+      z-index: -1;
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+}
+//===============================================================================================================
+.decor-description {
+   // .decor-description__top
+   &__top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      pointer-events: none;
+
+      display: block;
+      @include adaptiveValue("width", 300, 150);
+      @include adaptiveValue("height", 400, 200);
+      border-radius: 50%;
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      filter: blur(150px);
+      //===============================================================================================================
+      @media screen and (min-width: $pc) {
+         animation: light 10s linear infinite;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         filter: blur(100px);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         filter: blur(90px);
+      }
+   }
+   // .decor-description__bottom
+   &__bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%);
+      pointer-events: none;
+
+      display: block;
+      @include adaptiveValue("width", 310, 150);
+      @include adaptiveValue("height", 270, 200);
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      filter: blur(125px);
+      z-index: -1;
+      //===============================================================================================================
+      @media screen and (min-width: $pc) {
+         animation: light-hero 10s linear infinite;
+      }
+   }
+   // .decor-description__button
+   &__button {
+      color: $link-color;
+      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      svg {
+         @include adaptiveValue("width", 93, 70);
+         @include adaptiveValue("height", 86, 68);
+         fill: currentColor;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            transform: scale(1.09);
+         }
+      }
+   }
+}

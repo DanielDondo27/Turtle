@@ -1,0 +1,110 @@
+//===============================================================================================================
+.main-title {
+   font-family: "Oswald", sans-serif;
+   font-weight: 700;
+   @include adaptiveValue("font-size", 110, 50);
+   line-height: 120%;
+   letter-spacing: -0.04em;
+   text-transform: uppercase;
+   span {
+      background: linear-gradient(180deg, #fff496 17.34%, #eab359 91.62%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+   }
+}
+//===============================================================================================================
+.season-title {
+   display: flex;
+   flex-direction: column;
+   max-width: rem(542);
+   gap: rem(10);
+
+   &:not(:last-child) {
+      margin-bottom: rem(24);
+   }
+   // .season-title__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   // .season-title__line
+   &__line {
+      display: block;
+      width: rem(92);
+      height: rem(11);
+      background-color: $mainColor;
+   }
+   // .season-title__button
+   &__button {
+      color: $mainColor;
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @media (any-hover: hover) {
+         &:hover {
+            color: $link-color;
+         }
+      }
+   }
+   // .season-title__icon
+   &__icon {
+      width: rem(32);
+      height: rem(32);
+      fill: currentColor;
+   }
+   // .season-title__title
+   &__title {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 64, 40);
+      line-height: math.div(77, 64);
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+   }
+}
+.season-items {
+   display: grid;
+   align-items: center;
+   grid-template-columns: repeat(4, 1fr);
+   @include adaptiveValue("gap", 40, 15, 0, 1230, 767.98);
+
+   @media screen and (max-width: $mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+   }
+   @media screen and (max-width: $mobileSmall) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+   }
+   @media screen and (max-width: em(360.98)) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+   }
+   // .season-items__item
+   &__item {
+      justify-self: center;
+      text-align: center;
+      border-radius: rem(20);
+      @include adaptiveValue("width", 275, 170, 0, 1230, 767.98);
+      @include adaptiveValue("height", 275, 170, 0, 1230, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         @include adaptiveValue("width", 275, 200, 0, 1230, 360.98);
+         @include adaptiveValue("height", 275, 200, 0, 1230, 360.98);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(360.98)) {
+         width: 100%;
+         height: auto;
+      }
+      //===============================================================================================================
+      img {
+         border-radius: rem(20);
+         max-width: 100%;
+         height: auto;
+      }
+   }
+}
+//===============================================================================================================

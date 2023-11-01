@@ -1,0 +1,49 @@
+//===============================================================================================================
+@import "./season/season-hero";
+//===============================================================================================================
+.season {
+   // .season__hero
+   &__hero {
+      @include adaptiveValue("padding-top", 80, 40);
+      @include adaptiveValue("padding-bottom", 80, 70);
+   }
+   // .season__banner
+   &__banner {
+      @include adaptiveValue("min-height", 483, 320);
+      background-image: url(../img/season/season__hero/season-banner.png);
+      @media screen and (min-device-pixel-ratio: 2),
+         screen and (min-resolution: 192dpi),
+         screen and (min-resolution: 2dppx) {
+         background-image: url("../img/season/season__hero/season-banner@2x.png");
+      }
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+   }
+   // .season__party
+   &__party {
+      @include adaptiveValue("padding-top", 125, 50);
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+   // .season__pool
+   &__pool {
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+   // .season__blaze
+   &__blaze {
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+   // .season__club
+   &__club {
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+   // .season__break
+   &__break {
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+   // .season__yearbook
+   &__yearbook {
+      @include adaptiveValue("padding-bottom", 65, 40);
+   }
+}

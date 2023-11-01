@@ -1,0 +1,159 @@
+.teams-fraternity {
+   @include adaptiveValue("padding-top", 150, 50);
+   // .teams-fraternity__container
+   &__container {
+   }
+   // .teams-fraternity__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      @include adaptiveValue("gap", 40, 10, 0, 1230, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: rem(20);
+      }
+   }
+   // .teams-fraternity__item
+   &__item {
+      border-style: solid;
+      border-color: $line-color;
+      &:nth-child(1),
+      &:nth-child(3) {
+         border-width: rem(0) rem(1) rem(1) rem(0);
+         //===============================================================================================================
+         @media screen and (max-width: $mobile) {
+            border-width: rem(0) rem(0) rem(1) rem(0);
+         }
+         //===============================================================================================================
+         @media screen and (min-width: $tablet) {
+            @include adaptiveValue("padding-right", 65, 0, 0, 1230, 991.98);
+            @include adaptiveValue("padding-bottom", 65, 0, 0, 1230, 991.98);
+         }
+      }
+      &:nth-child(2),
+      &:nth-child(4) {
+         border-width: rem(0) rem(0) rem(1) rem(1);
+         //===============================================================================================================
+         @media screen and (max-width: $mobile) {
+            border-width: rem(0) rem(0) rem(1) rem(0);
+         }
+         //===============================================================================================================
+         @media screen and (min-width: $tablet) {
+            @include adaptiveValue("padding-left", 65, 0, 0, 1230, 991.98);
+            @include adaptiveValue("padding-bottom", 65, 0, 0, 1230, 991.98);
+         }
+      }
+   }
+}
+//===============================================================================================================
+.article-fraternity {
+   display: flex;
+   flex-direction: column;
+   //===============================================================================================================
+   @media screen and (max-width: $tablet) {
+      padding: rem(0) rem(10) rem(30) rem(10);
+   }
+   @include adaptiveValue("gap", 40, 16);
+   // .article-fraternity__header
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include adaptiveValue("gap", 24, 16, 0, 1230, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         justify-content: center;
+         flex-direction: column;
+      }
+   }
+   // .article-fraternity__picture
+   &__picture {
+      position: relative;
+      @include adaptiveValue("width", 274, 314);
+      @include adaptiveValue("height", 274, 314);
+      border-radius: rem(10);
+      img {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         object-fit: cover;
+         border-radius: rem(10);
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         @include adaptiveValue("width", 274, 240, 0, 1230, 991.98);
+         @include adaptiveValue("height", 274, 240, 0, 1230, 991.98);
+      }
+   }
+   // .article-fraternity__description
+   &__description {
+      display: flex;
+      flex-direction: column;
+      gap: rem(15);
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         @include adaptiveValue("flex-basis", 227, 150, 0, 1991.98);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         min-width: 100%;
+      }
+   }
+   // .article-fraternity__number
+   &__number {
+      position: relative;
+
+      font-weight: 700;
+      @include adaptiveValue("font-size", 40, 24);
+      line-height: math.div(48, 40);
+      text-transform: uppercase;
+      span {
+         color: $link-color;
+      }
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         right: 0%;
+         transform: translate(0%, -50%);
+
+         display: block;
+         width: 92px;
+         height: 11px;
+         background-color: $mainColor;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         font-weight: 300;
+      }
+   }
+   // .article-fraternity__title
+   &__title {
+      font-family: "Oswald";
+      font-weight: 700;
+      @include adaptiveValue("font-size", 64, 40);
+      line-height: math.div(48, 64);
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+   }
+   // .article-fraternity__subtitle
+   &__subtitle {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 20, 16);
+      line-height: math.div(40, 24);
+      color: $text-color;
+   }
+   // .article-fraternity__text
+   &__text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 20, 16);
+      line-height: math.div(32, 20);
+      color: $text-color;
+   }
+}

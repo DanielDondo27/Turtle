@@ -1,0 +1,311 @@
+.teams {
+   @include adaptiveValue("padding-top", 150, 25);
+   @include adaptiveValue("padding-bottom", 50, 25);
+   // .teams__container
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   // .teams__titel
+   &__titel {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 104, 64);
+      line-height: 120%;
+
+      text-transform: uppercase;
+      text-align: center;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 80, 25);
+      }
+      span {
+         color: #eab454;
+      }
+   }
+   // .teams__content
+   &__content {
+      @media screen and (min-width: $tablet) {
+         min-height: rem(380);
+      }
+      //===============================================================================================================
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 60, 30);
+      }
+   }
+   // .teams__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @include adaptiveValue("gap", 40, 10, 0, 1230, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: repeat(2, 1fr);
+         @include adaptiveValue("gap", 30, 20);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+   // .teams__item
+   &__item {
+   }
+   // .teams__button
+   &__button {
+      font-weight: 700;
+      text-align: center;
+      @include adaptiveValue("font-size", 20, 16);
+      border: rem(2) solid transparent;
+      line-height: math.div(20, 30);
+
+      padding: rem(14) rem(40);
+
+      color: #ffffff;
+      background: linear-gradient(90deg, #6c6e26 0%, #a29e4e 58.75%, #f0e488 100%);
+      background-size: 200% 200%;
+      animation: gradient 5s ease infinite;
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1), border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      border-radius: rem(200);
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         width: 100%;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            border-color: $mainColor;
+            color: #4f2600;
+         }
+      }
+   }
+}
+//===============================================================================================================
+.article-teams {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   border-radius: rem(10);
+   @include adaptiveValue("gap", 30, 15);
+   //===============================================================================================================
+   @media screen and (min-width: $tablet) {
+      position: relative;
+      @include adaptiveValue("width", 275, 215, 0, 1230, 991.98);
+      height: rem(200);
+      display: block;
+      background-color: #000;
+      transition: all 0.5s ease 0s;
+
+      &:hover {
+         transition: all 0.5s ease 0s;
+         height: rem(380);
+      }
+      &:hover .article-teams__picture {
+         @include adaptiveValue("width", 250, 219, 0, 1230, 991.98);
+         @include adaptiveValue("height", 250, 219, 0, 1230, 991.98);
+      }
+      &:hover .article-teams__content {
+         transform: translateY(0px);
+      }
+      &:hover .article-teams__picture img {
+         filter: grayscale(0);
+      }
+      &:hover .article-teams__icon svg {
+         transition: all 0.3s ease 0s;
+         visibility: hidden;
+      }
+      &:hover .article-teams__titel {
+         transition: all 0.3s ease 0s;
+         visibility: visible;
+      }
+   }
+
+   // .article-teams__wrapper
+   &__wrapper {
+      display: none;
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         position: absolute;
+         display: block;
+         inset: 0;
+         background-color: $bg-gray;
+         overflow: hidden;
+
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: rem(600);
+            height: rem(120);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(transparent, #eab359, #f0e591, #eab454, transparent);
+            animation: animate-article 4s linear infinite;
+         }
+         &::after {
+            content: "";
+            position: absolute;
+            inset: rem(3);
+            background-color: $background-color;
+         }
+      }
+   }
+   // .article-teams__picture
+   &__picture {
+      border-radius: rem(10);
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         border-radius: rem(20);
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         position: absolute;
+         top: -50px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: rem(150);
+         height: rem(150);
+         border-radius: rem(10);
+         background-color: $background-color;
+         transition: all 0.4s ease 0s;
+         overflow: hidden;
+         z-index: 1;
+
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: rem(500);
+            height: rem(150);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(transparent, #6c6c2f, #6c6c2f, #6c6c2f, transparent);
+            animation: animate-picture 6s linear infinite;
+         }
+         &::after {
+            content: "";
+            position: absolute;
+            inset: rem(3);
+            background-color: $background-color;
+            border-radius: rem(10);
+         }
+      }
+      //===============================================================================================================
+      img {
+         border-radius: rem(10);
+         max-width: 100%;
+         height: auto;
+         //===============================================================================================================
+         @media screen and (min-width: $tablet) {
+            position: absolute;
+            top: rem(10);
+            left: rem(10);
+            width: calc(100% - rem(20));
+            height: calc(100% - rem(20));
+            filter: grayscale(1);
+            z-index: 1;
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            border-radius: rem(20);
+            width: rem(275);
+            height: rem(275);
+         }
+      }
+   }
+   // .article-teams__inner
+   &__inner {
+      @media screen and (min-width: $tablet) {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+
+         display: flex;
+         justify-content: center;
+         align-items: flex-end;
+
+         overflow: hidden;
+      }
+   }
+   // .article-teams__content
+   &__content {
+      @media screen and (min-width: $tablet) {
+         text-align: center;
+         padding: rem(40);
+         width: 100%;
+         transition: all 0.4s ease 0s;
+         transform: translateY(145px);
+      }
+   }
+   // .article-teams__icon
+   &__icon {
+      display: none;
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         display: block;
+         pointer-events: none;
+         color: $mainColor;
+         svg {
+            width: rem(30);
+            height: rem(30);
+            fill: currentColor;
+            visibility: visible;
+            transition: all 0.3s ease 0s;
+         }
+         &:not(:last-child) {
+            margin-bottom: rem(30);
+         }
+      }
+   }
+   // .article-teams__titel
+   &__titel {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 24, 20);
+      line-height: math.div(24, 36);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+      //===============================================================================================================
+      @media (min-width: $tablet) {
+         transition: all 0.3s ease 0s;
+         visibility: hidden;
+      }
+   }
+   // .article-teams__text
+   &__text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 16, 14);
+      line-height: math.div(16, 24);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+   }
+   // .article-teams__button
+   &__button {
+      position: relative;
+
+      padding: rem(10) rem(30);
+      font-weight: 500;
+      font-size: 1em;
+      border-radius: rem(5);
+      background-color: $bg-green;
+
+      font-weight: 700;
+      @include adaptiveValue("font-size", 20, 16);
+      line-height: math.div(20, 30);
+      border-radius: rem(200);
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            color: $link-color;
+            background-color: $bg-green-hover;
+         }
+      }
+   }
+}

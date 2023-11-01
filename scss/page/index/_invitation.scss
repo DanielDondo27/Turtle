@@ -1,0 +1,115 @@
+.invitation {
+   @include adaptiveValue("padding-top", 150, 25);
+   @include adaptiveValue("padding-bottom", 150, 25);
+   // .invitation__container
+   &__container {
+   }
+   // .invitation__inner
+   &__inner {
+      position: relative;
+      @include adaptiveValue("min-height", 414, 477);
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      padding: rem(48) rem(65) rem(72) rem(105);
+      background: linear-gradient(90deg, #eab359 0%, #f0e591 20.21%, #eab454 100%);
+      @include adaptiveValue("border-radius", 24, 16);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         align-items: center;
+         text-align: center;
+         padding: rem(50) rem(5);
+      }
+   }
+   // .invitation__title
+   &__title {
+      @include adaptiveValue("max-width", 695, 514, 0, 1230, 767.98);
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 88, 56);
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      line-height: 120%;
+      color: #4f2600;
+      &:not(:last-child) {
+         margin-bottom: rem(24);
+      }
+      z-index: 1;
+   }
+   // .invitation__button-link
+   &__button-link {
+      position: relative;
+      overflow: hidden;
+
+      display: inline-flex;
+      margin: 0 auto;
+      gap: rem(10);
+
+      padding: rem(14) rem(40);
+      border-radius: rem(200);
+
+      font-weight: 700;
+      @include adaptiveValue("font-size", 20, 16);
+      border: rem(2) solid transparent;
+      line-height: 150%;
+
+      color: #010101;
+      background-color: $mainColor;
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1), border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: -50px;
+         bottom: 0;
+         left: 0;
+         border-right: rem(100) solid transparent;
+         border-top: rem(100) solid $bg-green;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: translateX(-100%);
+         z-index: -1;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            color: $mainColor;
+            border-color: $mainColor;
+         }
+         &:hover:before {
+            transform: translateX(0);
+         }
+      }
+   }
+   // .invitation__icon
+   &__icon {
+      @include adaptiveValue("width", 24, 20);
+      @include adaptiveValue("height", 24, 20);
+      fill: currentColor;
+   }
+   // .invitation__button
+   &__button {
+      position: absolute;
+      bottom: 0;
+      @include adaptiveValue("right", 65, 0);
+      transform: translate(0%, 50%);
+   }
+   // .invitation__picture
+   &__picture {
+      position: absolute;
+      @include adaptiveValue("bottom", -145, -100);
+      @include adaptiveValue("left", 65, 0);
+      transform: translate(0%, 0%);
+      pointer-events: none;
+
+      @include adaptiveValue("width", 373, 146);
+      @include adaptiveValue("height", 511, 200);
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+}

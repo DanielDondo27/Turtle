@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="The Brotherhood of Turtles invites YOU.">
+
+   <link rel="shortcut icon" href="./favicon-turtle.ico">
+   <link rel="stylesheet" href="css/style.min.css">
+
+   <title>ROADMAP | DEMO</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container">
+            <a href="./index.html" class="header__logo"><img src="./img/logo.svg" alt="logo site"></a>
+            <div class="header__burger burger">
+               <button type="button" class="burger__button button-burger" aria-label="menu burger button">
+                  <span></span>
+               </button>
+               <nav class="burger__navigation">
+                  <ul class="burger__list">
+                     <li class="burger__item"><a href="./index.html" class="burger__link">HOME</a></li>
+                     <li class="burger__item"><a href="./fraternity.html" class="burger__link">MEET THE FRATERNITY</a>
+                     </li>
+                     <li class="burger__item"><a href="./roadmap.html" class="burger__link _open">ROADMAP</a></li>
+                     <li class="burger__item"><a href="./season.html" class="burger__link">SEASON 1</a></li>
+                  </ul>
+               </nav>
+            </div>
+            <div class="header__functional">
+               <button data-da=".burger__navigation,767.98," type="button" class="header__button">
+                  <svg>
+                     <use xlink:href="./img/sprite.svg#icon-purse"></use>
+                  </svg>
+                  BUY NOW
+               </button>
+            </div>
+         </div>
+      </header>
+      <main class="roadmap">
+         <section class="roadmap__hero roadmap-hero">
+            <div class="roadmap-hero__container">
+               <div class="roadmap-hero__inner">
+                  <button type="button" class="roadmap-hero__button button-buy">BUY NOW</button>
+                  <h1 class="roadmap-hero__title main-title">
+                     THE <span>ROADMAP</span>
+                  </h1>
+               </div>
+               <picture class="roadmap-hero__picture">
+                  <source
+                     srcset="./img/roadmap/roadmap-hero-turtles-mobile.webp 1x, ./img/roadmap/roadmap-hero-turtles-mobile@2x.webp 2x"
+                     media="(max-width: 479.98px)" type="image/webp">
+                  <source
+                     srcset="./img/roadmap/roadmap-hero-turtles-mobile.png 1x, ./img/roadmap/roadmap-hero-turtles-mobile@2x.png 2x"
+                     media="(max-width: 479.98px)">
+                  <source srcset="./img/roadmap/roadmap-hero.webp 1x, ./img/roadmap/roadmap-hero@2x.webp 2x"
+                     type="image/webp">
+                  <source srcset="./img/roadmap/roadmap-hero.png 1x, ./img/roadmap/roadmap-hero@2x.png 2x">
+                  <img src="./img/roadmap/roadmap-hero.png" alt="roadmap picture" loading="lazy">
+               </picture>
+               <div class="roadmap-hero__decor decor-hero">
+                  <span class="decor-hero__top"></span>
+                  <span class="decor-hero__bottom -t"></span>
+                  <picture class="decor-hero__left">
+                     <source srcset="./img/roadmap/roadmap.webp 1x, ./img/roadmap/roadmap@2x.webp 2x" type="image/webp">
+                     <source srcset="./img/roadmap/roadmap.png 1x, ./img/roadmap/roadmap@2x.png 2x">
+                     <img src="./img/roadmap/roadmap.png" alt="picture" loading="lazy">
+                  </picture>
+                  <picture class="decor-hero__right">
+                     <source srcset="./img/roadmap/roadmap.webp 1x, ./img/roadmap/roadmap@2x.webp 2x" type="image/webp">
+                     <source srcset="./img/roadmap/roadmap.png 1x, ./img/roadmap/roadmap@2x.png 2x">
+                     <img src="./img/roadmap/roadmap.png" alt="picture" loading="lazy">
+                  </picture>
+               </div>
+            </div>
+         </section>
+         <div class="roadmap__map map">
+            <div class="map__container">
+               <ul class="map__list">
+                  <li class="line"></li>
+                  <li class="map__item">
+                     <section class="map__section section-map">
+                        <div class="circle"></div>
+                        <div class="section-map__titles">
+                           <header class="section-map__header header-map">
+                              <span class="header-map__line"></span>
+                              <button type="button" class="header-map__button" aria-label="arrow bottom">
+                                 <svg class="header-map__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-arrow-bottom"></use>
+                                 </svg>
+                              </button>
+                           </header>
+                           <h2 class="section-map__title">SERIES <span>1</span></h2>
+                           <p class="section-map__subtitle">FRESHMAN YEAR</p>
+                           <a href="./season.html" class="section-map__button">
+                              Live Now
+                              <svg class="section-map__icon">
+                                 <use xlink:href="./img/sprite.svg#icon-arrow-right"></use>
+                              </svg>
+                           </a>
+                        </div>
+                        <ul class="section-map__list list-map">
+                           <li class="list-map__item _active-color">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Freshman frat party</p>
+                           </li>
+                           <li class="list-map__item _active-color">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Wet and Wild Pool Party</p>
+                           </li>
+                           <li class="list-map__item _active-color">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">420 Blaze</p>
+                           </li>
+                           <li class="list-map__item _active-color">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Spring Break</p>
+                           </li>
+                           <li class="list-map__item _active-color">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">End of Year</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron" width="32" height="32">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Burning Turtle Festival (Rare Edition)</p>
+                           </li>
+                        </ul>
+                     </section>
+                  </li>
+                  <li class="map__item">
+                     <section class="map__section section-map">
+                        <div class="circle"></div>
+                        <div class="section-map__titles">
+                           <header class="section-map__header header-map">
+                              <span class="header-map__line"></span>
+                              <button type="button" class="header-map__button" aria-label="arrow bottom">
+                                 <svg class="header-map__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-arrow-bottom"></use>
+                                 </svg>
+                              </button>
+                           </header>
+                           <h2 class="section-map__title">SERIES <span>2</span></h2>
+                           <p class="section-map__subtitle">SOPHMORE YEAR</p>
+                        </div>
+                        <ul class="section-map__list list-map">
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Toga Party</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Beer Pong Championships</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Keg Stand Contest</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Someone Called the Cops!</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Mardi Gras</p>
+                           </li>
+                        </ul>
+                     </section>
+                  </li>
+                  <li class="map__item">
+                     <section class="map__section section-map">
+                        <div class="circle"></div>
+                        <div class="section-map__titles">
+                           <header class="section-map__header header-map">
+                              <span class="header-map__line"></span>
+                              <button type="button" class="header-map__button" aria-label="arrow bottom">
+                                 <svg class="header-map__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-arrow-bottom"></use>
+                                 </svg>
+                              </button>
+                           </header>
+                           <h2 class="section-map__title">SERIES <span>3</span></h2>
+                           <p class="section-map__subtitle">JUNIOR YEAR</p>
+                        </div>
+                        <ul class="section-map__list list-map">
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Thrift Shop Party</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Sport Jerseys</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Beer Bong Festival</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Beer Pong Championship</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Paint Party</p>
+                           </li>
+                        </ul>
+                     </section>
+                  </li>
+                  <li class="map__item">
+                     <section class="map__section section-map">
+                        <div class="circle"></div>
+                        <div class="section-map__titles">
+                           <header class="section-map__header header-map">
+                              <span class="header-map__line"></span>
+                              <button type="button" class="header-map__button" aria-label="arrow bottom">
+                                 <svg class="header-map__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-arrow-bottom"></use>
+                                 </svg>
+                              </button>
+                           </header>
+                           <h2 class="section-map__title">SERIES <span>4</span></h2>
+                           <p class="section-map__subtitle">SENIOR YEAR</p>
+                        </div>
+                        <ul class="section-map__list list-map">
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Bar Crawl</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Beer Pong Championship</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Exam Results Party</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Trip to Vegas</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Homecoming</p>
+                           </li>
+                        </ul>
+                     </section>
+                  </li>
+                  <li class="map__item">
+                     <section class="map__section section-map">
+                        <div class="circle"></div>
+                        <div class="section-map__titles">
+                           <header class="section-map__header header-map">
+                              <span class="header-map__line"></span>
+                              <button type="button" class="header-map__button" aria-label="arrow bottom">
+                                 <svg class="header-map__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-arrow-bottom"></use>
+                                 </svg>
+                              </button>
+                           </header>
+                           <h2 class="section-map__title">SERIES <span>5</span></h2>
+                           <p class="section-map__subtitle">GRADUATION</p>
+                        </div>
+                        <ul class="section-map__list list-map">
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Team Photo</p>
+                           </li>
+                           <li class="list-map__item">
+                              <svg class="list-map__iron">
+                                 <use xlink:href="./img/sprite.svg#icon-point"></use>
+                              </svg>
+                              <p class="list-map__text">Graduation Party</p>
+                           </li>
+                        </ul>
+                     </section>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <section class="page__invitation invitation">
+            <div class="invitation__container">
+               <div class="invitation__inner">
+                  <h2 class="invitation__title">
+                     Join the — Fraternity NOW!
+                  </h2>
+                  <a href="./roadmap.html" class="invitation__button-link">
+                     <svg class="invitation__icon">
+                        <use xlink:href="./img/sprite.svg#icon-arrow-curved"></use>
+                     </svg>
+                     VIEW ROADMAP
+                  </a>
+                  <picture class="invitation__picture">
+                     <source
+                        srcset="./img/home/home__invitation/invitation-mobile.webp 1x, ./img/home/home__invitation/invitation-mobile@2x.webp 2x"
+                        media="(max-width: 479.98px)" type="image/webp">
+                     <source
+                        srcset="./img/home/home__invitation/invitation-mobile.png 1x, ./img/home/home__invitation/invitation-mobile@2x.png 2x"
+                        media="(max-width: 479.98px)">
+                     <source
+                        srcset="./img/home/home__invitation/invitation.webp 1x, ./img/home/home__invitation/invitation@2x.webp 2x"
+                        type="image/webp">
+                     <source
+                        srcset="./img/home/home__invitation/invitation.png 1x, ./img/home/home__invitation/invitation@2x.png 2x">
+                     <img src="./img/home/home__invitation/invitation.png" alt="picrure invitation" loading="lazy">
+                  </picture>
+                  <button type="button" class="invitation__button button-buy">BUY NOW</button>
+               </div>
+            </div>
+         </section>
+      </main>
+      <button data-scroll class="scroll">
+         <div class="scroll__inner">
+         </div>
+         <svg class="scroll__icon" viewBox="0 0 9 14">
+            <path class="scroll__svg"
+               d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z">
+            </path>
+         </svg>
+      </button>
+      <footer class="footer">
+         <div class="footer__container">
+            <a href="./index.html" class="footer__logo"><img src="./img/logo-footer.svg" alt="logo footer"></a>
+            <ul class="footer__social-list social-list">
+               <li class="social-list__item">
+                  <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" class="social-list__link"
+                     aria-label="link to discord">
+                     <svg>
+                        <use xlink:href="./img/sprite.svg#icon-discord"></use>
+                     </svg>
+                  </a>
+               </li>
+               <li class="social-list__item">
+                  <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-list__link"
+                     aria-label="link to twitter">
+                     <svg>
+                        <use xlink:href="./img/sprite.svg#icon-twitter"></use>
+                     </svg>
+                  </a>
+               </li>
+               <li class="social-list__item">
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                     class="social-list__link" aria-label="link to instagram">
+                     <svg>
+                        <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+                     </svg>
+                  </a>
+               </li>
+               <li class="social-list__item">
+                  <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-list__link"
+                     aria-label="link to tiktok">
+                     <svg>
+                        <use xlink:href="./img/sprite.svg#icon-tiktok"></use>
+                     </svg>
+                  </a>
+               </li>
+            </ul>
+            <p class="footer__text">
+               2023 . All Right Reserved
+            </p>
+            <span class="footer__decor"></span>
+         </div>
+      </footer>
+   </div>
+   <script src="js/script.js"></script>
+   <script src="js/line.js"></script>
+</body>
+
+</html>

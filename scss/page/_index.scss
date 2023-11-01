@@ -1,0 +1,110 @@
+@import "./index/hero";
+@import "./index/slider";
+@import "./index/description";
+@import "./index/banner";
+@import "./index/teams";
+@import "./index/invitation";
+//===============================================================================================================
+.page {
+   // .page__hero
+   &__hero {
+   }
+   // .page__slider
+   &__slider {
+   }
+   // .page__description
+   &__description {
+   }
+   // .page__banner
+   &__banner {
+   }
+   // .page__teams
+   &__teams {
+   }
+   // .page__invitation
+   &__invitation {
+   }
+}
+//===============================================================================================================
+@keyframes line-text {
+   0% {
+      transform: translatX(0%);
+   }
+
+   100% {
+      transform: translateX(-50%);
+   }
+}
+//===============================================================================================================
+@keyframes animate-article {
+   0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+   }
+   100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+   }
+}
+//===============================================================================================================
+@keyframes animate-picture {
+   0% {
+      transform: translate(-50%, -50%) rotate(360deg);
+   }
+   100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+   }
+}
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+   25% {
+      background-position: 25% 75%;
+   }
+   50% {
+      background-position: 50% 100%;
+   }
+   75% {
+      background-position: 25% 75%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
+}
+//===============================================================================================================
+@keyframes light {
+   0% {
+      filter: blur(175px);
+      transform: scale(0.8);
+   }
+   50% {
+      filter: blur(110px);
+      transform: scale(1);
+   }
+   100% {
+      filter: blur(175px);
+      transform: scale(0.8);
+   }
+}
+@keyframes light-hero {
+   0% {
+      filter: blur(100px);
+   }
+   50% {
+      filter: blur(175px);
+   }
+   100% {
+      filter: blur(100px);
+   }
+}
+@keyframes light-t {
+   0% {
+      filter: blur(200px);
+   }
+   50% {
+      filter: blur(140px);
+   }
+   100% {
+      filter: blur(200px);
+   }
+}
+//===============================================================================================================

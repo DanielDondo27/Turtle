@@ -1,0 +1,189 @@
+//===============================================================================================================
+.scroll {
+   position: fixed;
+   top: 90%;
+   right: 10%;
+
+   display: none;
+   &.active {
+      display: flex;
+   }
+   align-items: center;
+   justify-content: center;
+
+   @include adaptiveValue("width", 70, 50);
+   @include adaptiveValue("height", 70, 50);
+   background-color: $mainColor;
+   z-index: 4;
+
+   // .scroll__icon
+   &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(270deg);
+      transition: all 0.5s ease 0s;
+      @include adaptiveValue("width", 50, 30);
+      @include adaptiveValue("height", 50, 30);
+      color: $mainColor;
+      z-index: 1;
+   }
+   // .scroll__svg
+   &__svg {
+      fill: currentColor;
+   }
+   // .scroll__inner
+   &__inner {
+      position: absolute;
+      display: block;
+      inset: 0;
+      background-color: $mainColor;
+      overflow: hidden;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: rem(600);
+         height: rem(120);
+         transform: translate(-50%, -50%);
+         background: linear-gradient(transparent, #eab359, #f0e591, #eab454, transparent);
+         animation: animate-article 4s linear infinite;
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         inset: rem(1);
+         background-color: $background-color;
+         transition: all 0.5s ease 0s;
+      }
+      z-index: -1;
+   }
+   //===============================================================================================================
+   @media (max-width: $mobileSmall) {
+      right: 5%;
+   }
+   //===============================================================================================================
+   @media (any-hover: hover) {
+      &:hover {
+         transform: scale(0.99);
+      }
+      &:hover .scroll__inner::after {
+         background-color: $bg-gray;
+      }
+      &:hover .scroll__icon {
+         color: $link-color;
+      }
+   }
+}
+//===============================================================================================================
+.header {
+   // .header__button
+   &__button {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: rem(8);
+
+      @include adaptiveValue("padding-top", 14, 10, 0, 1240, 768.98);
+      @include adaptiveValue("padding-bottom", 14, 10, 0, 1240, 768.98);
+      @include adaptiveValue("padding-left", 40, 15, 0, 1240, 768.98);
+      @include adaptiveValue("padding-right", 40, 15, 0, 1240, 768.98);
+
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: math.div(16, 24);
+      text-transform: uppercase;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+         border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      border: rem(2) solid $mainColor;
+      border-radius: rem(200);
+      overflow: hidden;
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: rem(-50);
+         bottom: 0;
+         left: 0;
+         border-right: rem(100) solid transparent;
+         border-top: rem(100) solid $bg-gray;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: translateX(-100%);
+         z-index: -1;
+      }
+
+      svg {
+         @include adaptiveValue("width", 24, 18);
+         @include adaptiveValue("height", 24, 18);
+         fill: currentColor;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            color: $link-color;
+            border-color: $link-color;
+            transform: scale(0.99);
+         }
+         &:hover::before {
+            transform: translateX(0);
+         }
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         margin: 0 auto;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         width: 100%;
+      }
+   }
+}
+//===============================================================================================================
+.button-buy {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+
+   font-weight: 800;
+   @include adaptiveValue("font-size", 24, 20);
+   line-height: math.div(36, 24);
+
+   @include adaptiveValue("width", 170, 90);
+   @include adaptiveValue("height", 170, 90);
+
+   background-color: $bg-green;
+   border: rem(5) solid $mainColor;
+   transition: border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+   border-radius: 50%;
+
+   &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -50px;
+      bottom: 0;
+      left: 0;
+      border-right: rem(300) solid transparent;
+      border-top: rem(300) solid $bg-green-hover;
+      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-100%);
+      z-index: -1;
+   }
+   //===============================================================================================================
+   @media (any-hover: hover) {
+      &:hover {
+         border-color: $link-color;
+      }
+      &:hover:before {
+         transform: translateX(0%);
+      }
+   }
+}
+//===============================================================================================================
